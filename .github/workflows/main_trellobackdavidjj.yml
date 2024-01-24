@@ -50,5 +50,5 @@ jobs:
         with:
           app-name: 'TrelloFrontJJ'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BC0B0BD807F244C88927EA9C6EC33937 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A780CA9902324D35A89694B57FE3A89B }}
           package: .
