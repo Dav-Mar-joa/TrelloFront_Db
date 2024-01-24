@@ -1,0 +1,25 @@
+<div class="fondCarte rounded-element">
+<div *ngIf="!modificationState">
+  <p (dblclick)="modifie()">{{ card.titre }}</p>
+  <p (dblclick)="modifie()">{{ card.description }}</p>
+</div>
+<div *ngIf="modificationState">
+  <input (keydown.enter)="modifie()"
+    type="text"
+    value="{{ card.titre }}"
+    [(ngModel)]="this.card.titre"
+  /><br />
+  <input (keydown.enter)="modifie()"
+    type="text"
+    value="{{ card.description }}"
+    [(ngModel)]="this.card.description"
+  /><br />
+</div>
+<button class="modif" (click)="deleteCard(card)">❌</button>
+<button class="modif" (click)="modifie()">🖍</button>
+<div class="CommentContainer" *ngFor="let comment of card.commentaires">
+  <app-comment [comment]="comment"></app-comment>
+</div>
+<br>
+<button class="ajout"(click)="ajoutComment()">➕ Add Comment</button>
+</div>
